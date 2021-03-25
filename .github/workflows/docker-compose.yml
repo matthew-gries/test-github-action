@@ -14,5 +14,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker-compose up -d
+    - name: Build the Docker images
+      run: docker-compose build
+  
+  up:
+    
+      runs-on: ubuntu-latest
+      timeout-minutes: 1
+      
+      steps:
+        - uses: actions/checkout@v2
+        - name: Run the Docker images
+          run: docker-compose up -d
+          
+      
+  
