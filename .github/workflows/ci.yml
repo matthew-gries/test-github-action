@@ -8,24 +8,15 @@ on:
 
 jobs:
 
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker images
-      run: docker-compose build
+  run-tests:
   
-  up:
-    
       runs-on: ubuntu-latest
-      timeout-minutes: 1
+      timeout-minutes: 3
       
       steps:
         - uses: actions/checkout@v2
         - name: Run the Docker images
-          run: docker-compose up -d
+          run: docker-compose up --build
           
       
   
