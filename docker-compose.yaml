@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:5.7
+    ports:
+      - '3306:3306'
+    environment: 
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+      - MYSQL_HOST=localhost
+      - MYSQL_DATABASE=test_db
+
+  web:
+    build:
+      context: ./repo
+    command: 'python testapp/manage.py runserver 0.0.0.0:8000'
+    volumes:
+      - ./repo:/server
+    ports:
+      - "8000:8000"
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=admin
+      - MYSQL_DATABASE=test_db
+    depends_on: 
+      - db
