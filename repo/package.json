@@ -2,8 +2,8 @@
   "scripts": {
     "start": "tsc && nodemon ./dist/index.js",
     "debug": "export DEBUG=* && yarn start",
-    "test": "jest",
-    "coverage": "jest --coverage"
+    "test": "./node_modules/.bin/jest",
+    "coverage": "yarn test --coverage"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
