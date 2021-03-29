@@ -11,7 +11,7 @@ services:
   web:
     build:
       context: ./repo
-    command: 'yarn coverage'
+    command: 'pwd && yarn coverage'
     volumes:
       - ./repo:/server
     ports:
