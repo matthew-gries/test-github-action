@@ -15,7 +15,7 @@ services:
   web:
     build:
       context: ./repo
-    command: 'python testapp/manage.py runserver 0.0.0.0:8000'
+    command: 'yarn coverage'
     volumes:
       - ./repo:/server
     ports:
