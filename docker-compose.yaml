@@ -16,6 +16,7 @@ services:
     command: 'sh config/test_container_entrypoint.sh'
     volumes:
       - ./repo:/server
+      - /server/node_modules
     ports:
       - "8000:8000"
     depends_on: 
