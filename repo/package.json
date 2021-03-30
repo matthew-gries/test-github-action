@@ -2,7 +2,7 @@
   "scripts": {
     "start": "tsc && nodemon ./dist/index.js",
     "debug": "export DEBUG=* && yarn start",
-    "test": "./node_modules/.bin/jest",
+    "test": "jest",
     "coverage": "yarn test --coverage"
   },
   "dependencies": {

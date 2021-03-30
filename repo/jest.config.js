@@ -10,11 +10,11 @@ module.exports = {
     "^.+\\.(ts|tsx)$": "ts-jest"
   },
   "setupFiles": ["<rootDir>/config/jest.setup.files.ts"],
-    "collectCoverageFrom": [
-        "src/**/*.ts"
-    ],
-    "coveragePathIgnorePatterns": [
-        "node_modules",
-        "src/index.ts",
-    ],
+  "collectCoverageFrom": [
+      "src/**/*.ts"
+  ],
+  "coveragePathIgnorePatterns": [
+      "node_modules",
+      "src/index.ts",
+  ],
 }
